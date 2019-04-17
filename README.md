@@ -6,5 +6,6 @@
 
 ## Database:
 - Apache Derby
- 
- 
+
+### Database Schema
+![database-schema](src/main/resources/db_schema.png)
