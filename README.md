@@ -8,4 +8,4 @@
 - Apache Derby
 
 ### Database Schema
-![database-schema](src/main/resources/db_schema.png)
+![database-schema](src/main/resources/db-schema.png)
