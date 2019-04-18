@@ -10,6 +10,39 @@
 ### Database Schema
 ![database-schema](src/main/resources/db-schema.png)
 
+## Entity
+### Domain
+```java
+@Entity(name = "DATA_PRODUCT")
+@Audited
+@AuditTable("AUDIT_PRODUCT")
+public class Product implements Serializable{
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(updatable = false)
+	private Long id;
+	private String code;
+	private String name;
+	private BigDecimal price;
+}
+```
+### Audit POJO
+```java
+public class ProductRevision {
+	private Product product;
+	private DefaultRevisionEntity revision;
+	private RevisionType revisionType;
+
+	public Number getRevisionNumber() {
+		return revision.getId();
+	}
+
+	public Date getRevisionDate() {
+		return revision.getRevisionDate();
+	}
+}
+```
+
 ## Example Rest API:
 - POST - http://localhost:8888/save : {"code": "P1","name": "Pepsi","price": 10.00}
 - POST - http://localhost:8888/list
