@@ -7,6 +7,26 @@
 ## Database:
 - Apache Derby
 
+## Project Structure
+* com.example.springdataenvers
+    * SpringDataEnversApplication
+      * Main spring boot application
+* com.example.springdataenvers.model
+    * Product
+      * Domain data object
+    * ProductRevision
+      * Pack audit data transfer object for Product
+* com.example.springdataenvers.controller
+    * ProductController
+      * Rest Controller for CRUD Product and look up Product audit log
+* com.example.springdataenvers.dao
+    * IProductRepository
+      * Repository for CRUD Product object and write Product audit log
+    * IProductRevisionQuery
+    * ProductRevisionQuery
+      * Query Product audit log and pack to ProductRevision
+
+
 ### Database Schema
 ![database-schema](src/main/resources/db-schema.png)
 
